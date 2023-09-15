@@ -52,7 +52,7 @@
                         <tr>
                             <th class="col-5">Nama</th>
                             <th class="col-3">Umur</th>
-                            <th class="col-4">Uang Sangu</th>
+                            <th class="col-4">Uang Sangu(RP)</th>
                         </tr>
                     </thead>
                     <tbody id="pendaftar-list"></tbody>

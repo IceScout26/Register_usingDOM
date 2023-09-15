@@ -67,6 +67,7 @@ document.getElementById("registration-form").addEventListener("submit", function
         umur,
         uangSangu
     });
+    alert("Data Telah Diinput");
 
     // Kosongkan input
     document.getElementById("name").value = "";
