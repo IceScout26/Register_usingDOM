@@ -1,75 +1,77 @@
-const registerData = []; // Array untuk menyimpan data register
+const pendaftarList = []; // Array untuk menyimpan data pendaftar
 
 // Fungsi untuk menghitung rata-rata umur dan uang sangu
-function average() {
-    let totalAge = 0;
-    let totalMoney = 0;
+function hitungRataRata() {
+    let totalUmur = 0;
+    let totalUangSangu = 0;
 
-    for (const register of registerData) {
-        totalAge += register.age;
-        totalMoney += register.money;
+    for (const pendaftar of pendaftarList) {
+        totalUmur += pendaftar.umur;
+        totalUangSangu += pendaftar.uangSangu;
     }
 
-    const averageAge = totalAge / registerData.length;
-    const averageMoney = totalMoney / registerData.length;
+    const rataRataUmur = totalUmur / pendaftarList.length;
+    const rataRataUangSangu = totalUangSangu / pendaftarList.length;
 
     return {
-        averageAge,
-        averageMoney
+        rataRataUmur,
+        rataRataUangSangu
     };
 }
 
-// Fungsi untuk menampilkan data register dan resume
+// Fungsi untuk menampilkan data pendaftar dan resume
 function tampilkanData() {
-    const resume = document.getElementById("resume");
-    const registerTable = document.getElementById("list-data_register");
+    const averageAge = document.getElementById("average-age");
+    const averageMoney = document.getElementById("average-money");
+    const pendaftarTable = document.getElementById("pendaftar-list");
     const {
-        averageAge,
-        averageMoney
-    } = average();
+        rataRataUmur,
+        rataRataUangSangu
+    } = hitungRataRata();
 
     // Tampilkan resume
-    resume.innerHTML = `Rata-rata register memiliki uang sangu sebesar ${averageMoney.toFixed(2)} dengan rata-rata umur ${averageAge.toFixed(2)}`;
+    resume.innerHTML = `Rata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSangu.toFixed(0)} dengan rata-rata umur ${rataRataUmur.toFixed(0)}`;
 
-    // Tampilkan data register
-    registerTable.innerHTML = "";
-    for (const register of registerData) {
+    // Tampilkan data pendaftar
+    pendaftarTable.innerHTML = "";
+    for (const pendaftar of pendaftarList) {
         const row = `
             <tr>
-                <th>${register.name}</th>
-                <th>${register.age}</th>
-                <th>${register.money}</th>
+                <td>${pendaftar.nama}</td>
+                <td>${pendaftar.umur}</td>
+                <td>${pendaftar.uangSangu}</td>
             </tr>
         `;
-        registerTable.innerHTML += row;
+        pendaftarTable.innerHTML += row;
     }
 }
 
-// Event listener for form submission
+// Event listener untuk form submission
 document.getElementById("registration-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const age = parseInt(document.getElementById("age").value);
-    const money = parseFloat(document.getElementById("money").value);
+    const nama = document.getElementById("name").value;
+    const umur = parseInt(document.getElementById("age").value);
+    const uangSangu = parseFloat(document.getElementById("money").value);
 
     // Validasi input
-    if (name.length < 10 || age < 25 || money < 100000 || money > 1000000) {
+    if (nama.length < 10 || umur < 25 || uangSangu < 100000 || uangSangu > 1000000) {
         alert("Data tidak valid. Pastikan Nama minimal 10 karakter, Umur minimal 25 tahun, dan Uang Sangu antara 100 ribu hingga 1 juta.");
         return;
     }
 
-    // add data register to array
-    registerData.push({
-        name,
-        age,
-        money
+    // Tambahkan data pendaftar ke array
+    pendaftarList.push({
+        nama,
+        umur,
+        uangSangu
     });
 
-    // clear input
+    // Kosongkan input
     document.getElementById("name").value = "";
     document.getElementById("age").value = "";
     document.getElementById("money").value = "";
 
+    // Tampilkan data terbaru
     tampilkanData();
 });
