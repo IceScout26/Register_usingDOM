@@ -38,7 +38,7 @@
                         <input type="number" class="form-control" id="age" required>
                     </div>
                     <div class="mb-3">
-                        <label for="money" class="form-label">Uang Sangu</label>
+                        <label for="money" class="form-label">Uang Sangu (Rp)</label>
                         <input type="number" class="form-control" id="money" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -47,7 +47,6 @@
 
             <!-- Tab List Pendaftar -->
             <div class="tab-pane fade" id="list-pendaftar" role="tabpanel" aria-labelledby="list-pendaftar-tab">
-                <div id="resume"></div>
                 <table class="table table-bordered mt-3">
                     <thead>
                         <tr>
@@ -58,6 +57,8 @@
                     </thead>
                     <tbody id="pendaftar-list"></tbody>
                 </table>
+                <h3 id="average-age"></h3>
+                <h3 id="average-money"></h3>
             </div>
         </div>
     </div>

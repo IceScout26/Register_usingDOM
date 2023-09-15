@@ -29,9 +29,6 @@ function tampilkanData() {
         rataRataUangSangu
     } = hitungRataRata();
 
-    // Tampilkan resume
-    resume.innerHTML = `Rata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSangu.toFixed(0)} dengan rata-rata umur ${rataRataUmur.toFixed(0)}`;
-
     // Tampilkan data pendaftar
     pendaftarTable.innerHTML = "";
     for (const pendaftar of pendaftarList) {
@@ -44,6 +41,8 @@ function tampilkanData() {
         `;
         pendaftarTable.innerHTML += row;
     }
+    averageAge.innerHTML = `Rata-rata umur pendaftar ${rataRataUmur.toFixed(0)}`
+    averageMoney.innerHTML = `Rata-rata uang sangu pendaftar Rp ${rataRataUangSangu.toFixed(2)}`
 }
 
 // Event listener untuk form submission
