@@ -29,7 +29,7 @@
             <!-- Tab Registrasi -->
             <div class="tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
                 <form id="registration-form">
-                    <div class="mb-3">
+                    <div class="mb-3 mt-5">
                         <label for="name" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="name" required>
                     </div>
@@ -41,13 +41,13 @@
                         <label for="money" class="form-label">Uang Sangu (Rp)</label>
                         <input type="number" class="form-control" id="money" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">SUBMIT</button>
                 </form>
             </div>
 
             <!-- Tab List Pendaftar -->
             <div class="tab-pane fade" id="list-pendaftar" role="tabpanel" aria-labelledby="list-pendaftar-tab">
-                <table class="table table-bordered mt-3">
+                <table class="table table-bordered mt-5">
                     <thead>
                         <tr>
                             <th class="col-5">Nama</th>
