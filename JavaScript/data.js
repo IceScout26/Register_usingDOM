@@ -54,9 +54,12 @@ document.getElementById("registration-form").addEventListener("submit", function
     const uangSangu = parseFloat(document.getElementById("money").value);
 
     // Validasi input
-    if (nama.length < 10 || umur < 25 || uangSangu < 100000 || uangSangu > 1000000) {
-        alert("Data tidak valid. Pastikan Nama minimal 10 karakter, Umur minimal 25 tahun, dan Uang Sangu antara 100 ribu hingga 1 juta.");
-        return;
+    if (nama.length < 10) {
+        alert("Nama terlalu pendek. Pastikan Nama minimal 10 karakter.");
+    } else if (umur < 25) {
+        alert("Maaf umur anda belum cukup untuk mendaftar. Minimal umur 25 tahun.");
+    } else if (uangSangu < 100000 || uangSangu > 1000000) {
+        alert("Uang Sangu tidak valid. Uang Sangu harus antara 100 ribu hingga 1 juta.");
     }
 
     // Tambahkan data pendaftar ke array
