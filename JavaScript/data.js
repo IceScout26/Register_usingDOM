@@ -30,7 +30,7 @@ function showData() {
     } = countAverage();
 
     // show register data
-    registerTable.innerHTML = "";
+    showRegisterData.innerHTML = "";
     for (const register of registerData) {
         const row = `
             <tr>
