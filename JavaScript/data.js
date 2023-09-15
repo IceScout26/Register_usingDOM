@@ -42,7 +42,7 @@ function tampilkanData() {
         pendaftarTable.innerHTML += row;
     }
     averageAge.innerHTML = `Rata-rata umur pendaftar ${rataRataUmur.toFixed(0)}`
-    averageMoney.innerHTML = `Rata-rata uang sangu pendaftar Rp ${rataRataUangSangu.toFixed(2)}`
+    averageMoney.innerHTML = `Rata-rata uang sangu pendaftar Rp ${rataRataUangSangu.toFixed(2)},-`
 }
 
 // Event listener untuk form submission
@@ -60,8 +60,7 @@ document.getElementById("registration-form").addEventListener("submit", function
         alert("Maaf umur anda belum cukup untuk mendaftar. Minimal umur 25 tahun.");
     } else if (uangSangu < 100000 || uangSangu > 1000000) {
         alert("Uang Sangu tidak valid. Uang Sangu harus antara 100 ribu hingga 1 juta.");
-    }
-
+    }else{
     // Tambahkan data pendaftar ke array
     pendaftarList.push({
         nama,
@@ -76,4 +75,5 @@ document.getElementById("registration-form").addEventListener("submit", function
 
     // Tampilkan data terbaru
     tampilkanData();
+    }
 });
