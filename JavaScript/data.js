@@ -1,17 +1,17 @@
-const registerList = []; // Array untuk menyimpan data register
+const registerData = []; // Array untuk menyimpan data register
 
 // Fungsi untuk menghitung rata-rata umur dan uang sangu
 function average() {
     let totalAge = 0;
     let totalMoney = 0;
 
-    for (const register of registerList) {
+    for (const register of registerData) {
         totalAge += register.age;
         totalMoney += register.money;
     }
 
-    const averageAge = totalAge / registerList.length;
-    const averageMoney = totalMoney / registerList.length;
+    const averageAge = totalAge / registerData.length;
+    const averageMoney = totalMoney / registerData.length;
 
     return {
         averageAge,
@@ -22,7 +22,7 @@ function average() {
 // Fungsi untuk menampilkan data register dan resume
 function tampilkanData() {
     const resume = document.getElementById("resume");
-    const registerTable = document.getElementById("register-list");
+    const registerTable = document.getElementById("list-data_register");
     const {
         averageAge,
         averageMoney
@@ -33,12 +33,12 @@ function tampilkanData() {
 
     // Tampilkan data register
     registerTable.innerHTML = "";
-    for (const register of registerList) {
+    for (const register of registerData) {
         const row = `
             <tr>
-                <td>${register.name}</td>
-                <td>${register.age}</td>
-                <td>${register.money}</td>
+                <th>${register.name}</th>
+                <th>${register.age}</th>
+                <th>${register.money}</th>
             </tr>
         `;
         registerTable.innerHTML += row;
@@ -60,7 +60,7 @@ document.getElementById("registration-form").addEventListener("submit", function
     }
 
     // add data register to array
-    registerList.push({
+    registerData.push({
         name,
         age,
         money
